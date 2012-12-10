@@ -1,0 +1,17 @@
+{
+    "name": "ossc-server",
+    "version": "0.0.0",
+    "author": "developer@osscnode.com",
+    "description": "open source stamp cataloger server application",
+
+    "dependencies": {
+        "underscore": "1.4.x",
+        "mongoose": "3.4.x",
+        "restify": "1.4.x",
+	"redis" : "0.8.2"
+    },
+
+    "engines": {
+        "node": "0.8.x"
+    }
+}

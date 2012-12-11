@@ -16,6 +16,7 @@ var UserSchema;
 UserSchema = require('./../Schema/UserSchema');
 
 module.exports.authenticate = function(request, response)	{
+
 	var reply = {};
 
 	if(UserSchema)	{
@@ -26,6 +27,10 @@ module.exports.authenticate = function(request, response)	{
 		UserModel = mongoose.model('user');
 
 		attributes = request.params;
+		
+		delete attributes._id;
+		delete attributes.token;
+		delete attributes.name;
 
 		UserModel.findOne(attributes, "_id name email token", function(error, user)	{
 

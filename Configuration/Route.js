@@ -17,22 +17,26 @@ require("fs").readdirSync("./Controller/").forEach(function(file) {
  * Method to open the registered routes;
  */
 var open = function()	{
-	for(var route in routeRegister)	{
+	/**for(var route in routeRegister)	{
 		routeRegister[route];
-	}
+	}**/
 };
 
 module.exports = {
-
-open : open,
-
-controllers : controllers
+	open : open,
+	controllers : controllers
 };
+
+var loadRoutes = function(register)	{
+	for(var route in register)	{
+		register[route]();
+	}
+}
 
 var UserRoute = function()	{
-	// Do the routing Here
+	server.post('/user/login', controllers.Login.authenticate);
 };
 
-var routeRegister = {
-	user : UserRoute()
-};
+loadRoutes({
+	user : UserRoute
+});

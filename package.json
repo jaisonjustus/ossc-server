@@ -2,7 +2,7 @@
     "name": "ossc-server",
     "version": "0.0.0",
     "author": "developer@osscnode.com",
-    "description": "open source stamp cataloger server application",
+    "description": "open source stamp cataloger project server application",
 
     "dependencies": {
         "underscore": "1.4.x",

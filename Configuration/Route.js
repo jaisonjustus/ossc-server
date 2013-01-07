@@ -34,7 +34,7 @@ var loadRoutes = function(register)	{
 }
 
 var UserRoute = function()	{
-	server.post('/user/login', controllers.Login.authenticate);
+	server.post('/user/login', controllers.User.addUser);
 	server.post('/user/', controllers.User.addUser);
 };
 
